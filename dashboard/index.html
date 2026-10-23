@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Media Sentiment Analysis</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#172033;font-family:Arial,sans-serif}
+header{background:#18294b;color:white;padding:26px 5vw}header h1{margin:0 0 8px;font-size:27px}header p{margin:0;color:#d7e3ff}
+main{max-width:1100px;margin:24px auto;padding:0 18px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.card,.panel{background:white;border-radius:14px;padding:18px;box-shadow:0 3px 14px #1720330d;margin-bottom:16px}
+.label{color:#667085;font-size:13px}.value{font-size:29px;font-weight:700;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.barrow{display:grid;grid-template-columns:90px 1fr 38px;gap:8px;align-items:center;margin:15px 0;font-size:13px}
+.track{height:15px;background:#edf0f5;border-radius:8px;overflow:hidden}.fill{height:100%;border-radius:8px}
+.positive{background:#2d9d78}.neutral{background:#e0a43a}.negative{background:#d75c67}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #e8edf4}th{color:#667085}
+.note{font-size:12px;color:#667085;line-height:1.5}footer{text-align:center;padding:20px;color:#667085}
+</style></head>
+<body>
+<header><h1>Social Media Sentiment Analysis</h1><p>Big Data Computing Technologies Lab · Sentiment distribution and entity comparison</p></header>
+<main>
+<div id="status" class="panel">Loading analysis results… Run <code>python3 src/preprocess_and_analyze.py</code> from the project root, then serve the project with <code>python3 -m http.server 8000</code>.</div>
+<section class="cards" id="cards"></section>
+<div class="grid"><section class="panel"><h3>Predicted sentiment (lexicon)</h3><div id="overall"></div></section>
+<section class="panel"><h3>Sentiment by entity</h3><div id="entity"></div></section></div>
+<section class="panel"><h3>Entity summary</h3><table><thead><tr><th>Entity</th><th>Positive</th><th>Neutral</th><th>Negative</th><th>Total</th></tr></thead><tbody id="table"></tbody></table></section>
+<p class="note">Based on Kaggle's Twitter Sentiment Analysis dataset (CC0, public domain). Sentiment bars show lexicon predictions; agreement is measured against the dataset labels and is only a simple baseline. The posts concern specific entities and are not a representative sample of all public opinion. The source has no post dates. Rule-based sentiment can miss sarcasm, context, slang, and multilingual expressions.</p>
+</main><footer>Social Media Sentiment Analysis · Educational project</footer>
+<script>
+async function load(){
+ try{
+  const r=await fetch('../outputs/summary.json'); if(!r.ok) throw Error('summary.json not found');
+  const d=await r.json(); document.getElementById('status').textContent='Analysis loaded successfully.';
+  const sentiments=['positive','neutral','negative'];
+  const cardData=[['Total posts',d.total_posts],['Positive',d.sentiment_counts.positive],['Neutral',d.sentiment_counts.neutral],['Negative',d.sentiment_counts.negative],['Agreement with dataset labels',`${d.evaluation.accuracy_percent}%`]];
+  document.getElementById('cards').innerHTML=cardData.map((x,i)=>`<div class="card"><div class="label">${x[0]}</div><div class="value">${x[1]}</div><div class="label">${i?'':'Records processed'}</div></div>`).join('');
+  function bar(label,n,max,cls){return `<div class="barrow"><span>${label}</span><div class="track"><div class="fill ${cls}" style="width:${max?100*n/max:0}%"></div></div><b>${n}</b></div>`}
+  const max=Math.max(1,...sentiments.map(s=>d.sentiment_counts[s]));
+  document.getElementById('overall').innerHTML=sentiments.map(s=>bar(s,d.sentiment_counts[s],max,s)).join('');
+  const emax=Math.max(1,...d.entities.map(e=>e.total));
+  document.getElementById('entity').innerHTML=d.entities.map(e=>`<h4>${e.entity}</h4>`+sentiments.map(s=>bar(s,e[s],emax,s)).join('')).join('');
+  document.getElementById('table').innerHTML=d.entities.map(e=>`<tr><td>${e.entity}</td><td>${e.positive}</td><td>${e.neutral}</td><td>${e.negative}</td><td>${e.total}</td></tr>`).join('');
+ }catch(e){document.getElementById('status').textContent='Could not load outputs/summary.json. Run the Python analysis from the project root and open the dashboard through a local web server.'}
+}
+load();
+</script></body></html>

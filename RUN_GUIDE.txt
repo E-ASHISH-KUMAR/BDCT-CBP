@@ -1,0 +1,14 @@
+SOCIAL MEDIA SENTIMENT ANALYSIS — QUICK RUN GUIDE
+
+1. Extract the project folder.
+2. Open a terminal in social_media_sentiment_analysis.
+3. Run: python3 src/preprocess_and_analyze.py
+4. Run: python3 -m http.server 8000
+5. Open: http://localhost:8000/dashboard/
+
+Outputs are written to outputs/.
+The input contains 61,810 labelled posts based on Kaggle's Twitter Sentiment Analysis dataset:
+https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis
+Rows labelled Irrelevant and rows with empty text were excluded. The source has no post
+dates, so post_date is blank. Its subject/entity field is retained for analysis.
+The Hadoop Streaming and Hive files are lab examples and require a configured Hadoop/Hive environment.

@@ -1,0 +1,255 @@
+{
+  "total_posts": 61810,
+  "sentiment_counts": {
+    "positive": 11269,
+    "neutral": 46023,
+    "negative": 4518
+  },
+  "sentiment_percentages": {
+    "positive": 18.23,
+    "neutral": 74.46,
+    "negative": 7.31
+  },
+  "platforms": [
+    {
+      "platform": "Twitter",
+      "positive": 11269,
+      "neutral": 46023,
+      "negative": 4518,
+      "total": 61810
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Amazon",
+      "positive": 438,
+      "neutral": 1537,
+      "negative": 136,
+      "total": 2111
+    },
+    {
+      "entity": "ApexLegends",
+      "positive": 435,
+      "neutral": 1576,
+      "negative": 177,
+      "total": 2188
+    },
+    {
+      "entity": "AssassinsCreed",
+      "positive": 559,
+      "neutral": 1319,
+      "negative": 121,
+      "total": 1999
+    },
+    {
+      "entity": "Battlefield",
+      "positive": 337,
+      "neutral": 977,
+      "negative": 93,
+      "total": 1407
+    },
+    {
+      "entity": "Borderlands",
+      "positive": 591,
+      "neutral": 1314,
+      "negative": 166,
+      "total": 2071
+    },
+    {
+      "entity": "CS-GO",
+      "positive": 450,
+      "neutral": 1112,
+      "negative": 111,
+      "total": 1673
+    },
+    {
+      "entity": "CallOfDuty",
+      "positive": 300,
+      "neutral": 1289,
+      "negative": 130,
+      "total": 1719
+    },
+    {
+      "entity": "CallOfDutyBlackopsColdWar",
+      "positive": 370,
+      "neutral": 1314,
+      "negative": 104,
+      "total": 1788
+    },
+    {
+      "entity": "Cyberpunk2077",
+      "positive": 314,
+      "neutral": 1292,
+      "negative": 206,
+      "total": 1812
+    },
+    {
+      "entity": "Dota2",
+      "positive": 401,
+      "neutral": 1382,
+      "negative": 177,
+      "total": 1960
+    },
+    {
+      "entity": "FIFA",
+      "positive": 315,
+      "neutral": 1307,
+      "negative": 168,
+      "total": 1790
+    },
+    {
+      "entity": "Facebook",
+      "positive": 172,
+      "neutral": 1368,
+      "negative": 159,
+      "total": 1699
+    },
+    {
+      "entity": "Fortnite",
+      "positive": 208,
+      "neutral": 1078,
+      "negative": 139,
+      "total": 1425
+    },
+    {
+      "entity": "Google",
+      "positive": 321,
+      "neutral": 1344,
+      "negative": 110,
+      "total": 1775
+    },
+    {
+      "entity": "GrandTheftAuto(GTA)",
+      "positive": 259,
+      "neutral": 1213,
+      "negative": 83,
+      "total": 1555
+    },
+    {
+      "entity": "Hearthstone",
+      "positive": 513,
+      "neutral": 1409,
+      "negative": 164,
+      "total": 2086
+    },
+    {
+      "entity": "HomeDepot",
+      "positive": 322,
+      "neutral": 1555,
+      "negative": 134,
+      "total": 2011
+    },
+    {
+      "entity": "LeagueOfLegends",
+      "positive": 428,
+      "neutral": 1484,
+      "negative": 179,
+      "total": 2091
+    },
+    {
+      "entity": "MaddenNFL",
+      "positive": 272,
+      "neutral": 1868,
+      "negative": 168,
+      "total": 2308
+    },
+    {
+      "entity": "Microsoft",
+      "positive": 370,
+      "neutral": 1686,
+      "negative": 151,
+      "total": 2207
+    },
+    {
+      "entity": "NBA2K",
+      "positive": 238,
+      "neutral": 1749,
+      "negative": 196,
+      "total": 2183
+    },
+    {
+      "entity": "Nvidia",
+      "positive": 335,
+      "neutral": 1736,
+      "negative": 136,
+      "total": 2207
+    },
+    {
+      "entity": "Overwatch",
+      "positive": 310,
+      "neutral": 1220,
+      "negative": 139,
+      "total": 1669
+    },
+    {
+      "entity": "PlayStation5(PS5)",
+      "positive": 306,
+      "neutral": 1529,
+      "negative": 89,
+      "total": 1924
+    },
+    {
+      "entity": "PlayerUnknownsBattlegrounds(PUBG)",
+      "positive": 209,
+      "neutral": 1074,
+      "negative": 71,
+      "total": 1354
+    },
+    {
+      "entity": "RedDeadRedemption(RDR)",
+      "positive": 400,
+      "neutral": 1578,
+      "negative": 96,
+      "total": 2074
+    },
+    {
+      "entity": "TomClancysGhostRecon",
+      "positive": 436,
+      "neutral": 1708,
+      "negative": 168,
+      "total": 2312
+    },
+    {
+      "entity": "TomClancysRainbowSix",
+      "positive": 411,
+      "neutral": 1653,
+      "negative": 228,
+      "total": 2292
+    },
+    {
+      "entity": "Verizon",
+      "positive": 321,
+      "neutral": 1709,
+      "negative": 183,
+      "total": 2213
+    },
+    {
+      "entity": "WorldOfCraft",
+      "positive": 435,
+      "neutral": 1583,
+      "negative": 145,
+      "total": 2163
+    },
+    {
+      "entity": "Xbox(Xseries)",
+      "positive": 298,
+      "neutral": 1160,
+      "negative": 123,
+      "total": 1581
+    },
+    {
+      "entity": "johnson&johnson",
+      "positive": 195,
+      "neutral": 1900,
+      "negative": 68,
+      "total": 2163
+    }
+  ],
+  "evaluation": {
+    "labelled_posts": 61810,
+    "matches": 23875,
+    "accuracy_percent": 38.63,
+    "note": "Agreement with dataset labels; the rule-based lexicon is a baseline, not a benchmark model."
+  },
+  "method": "rule-based lexicon baseline; Kaggle Twitter Entity Sentiment Analysis dataset"
+}
